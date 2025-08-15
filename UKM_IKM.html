@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UKM IKM Indonesia - Pemberdayaan Usaha Lokal</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+body { font-family: 'Inter', sans-serif; }
+.hero-gradient { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%); }
+.card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  flex: 0 0 33.333%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.carousel-item img {
+  width: 80%;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+.carousel-item.center img {
+  transform: scale(1.2);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  border: none;
+  font-size: 1.8rem;
+  color: white;
+  padding: 0.5em;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+.carousel-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateY(-50%) scale(1.1);
+}
+.carousel-track { display: flex; flex-wrap: nowrap; will-change: transform; }
+.carousel-item { flex: 0 0 33.3333333%; display:flex; justify-content:center; align-items:center; }
+.carousel-item img { width: 80%; border-radius: 12px; transition: transform .4s ease, opacity .4s ease; opacity:.7; }
+.carousel-item.center img { transform: scale(1.2); opacity: 1; }
+
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-slide img {
+  height: 280px;
+  width: 100%;
+  max-width: calc(100% - 20px); /* jarak antar gambar */
+  border-radius: 30px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+</style>
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Navigation -->
+<nav class="bg-white shadow-lg sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<div class="flex items-center">
+ <div class="flex-shrink-0 flex items-center space-x-3">
+            <!-- Logo -->
+            <img src="img/ukm/UKM IKM Logos.jpg" class="h-16 w-16 object-contain">
+
+            <!-- Teks -->
+            <div class="leading-tight">
+<h1 class="text-2xl font-bold text-blue-600">UKM IKM</h1>
+<p class="text-xs text-gray-600">Indonesia</p>
+</div>
+</div>
+<div class="hidden md:block">
+<div class="ml-10 flex items-baseline space-x-4">
+<a href="#beranda" class="text-blue-600 hover:text-blue-800 px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
+<a href="#tentang" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Tentang</a>
+<a href="#program" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Program</a>
+<a href="#dampak" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Dampak</a>
+<a href="#kontak" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Kontak</a>
+</div>
+</div>
+<div class="md:hidden">
+<button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600">
+<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+</svg>
+</button>
+</div>
+</div>
+</div>
+<!-- Mobile menu -->
+<div id="mobile-menu" class="md:hidden hidden">
+<div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+<a href="#beranda" class="text-blue-600 block px-3 py-2 text-base font-medium">Beranda</a>
+<a href="#tentang" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Tentang</a>
+<a href="#program" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Program</a>
+<a href="#dampak" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Dampak</a>
+<a href="#kontak" class="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">Kontak</a>
+</div>
+</div>
+</nav>
+
+<!-- Hero Section -->
+<section id="beranda" class="hero-gradient text-white py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center">
+<h1 class="text-4xl md:text-6xl font-bold mb-6">
+Memberdayakan Usaha Lokal
+<span class="block text-yellow-300">untuk Indonesia Sejahtera</span>
+</h1>
+<p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+Kami berkomitmen mengembangkan UKM dan IKM Indonesia untuk meningkatkan kesejahteraan masyarakat rentan melalui pemberdayaan ekonomi berkelanjutan
+</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button onclick="scrollToSection('program')" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-semibold py-3 px-8 rounded-lg transition duration-300">
+Lihat Program Kami
+</button>
+<button onclick="scrollToSection('kontak')" class="border-2 border-white hover:bg-white hover:text-blue-600 font-semibold py-3 px-8 rounded-lg transition duration-300">
+Bergabung Sekarang
+</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Tentang Section -->
+<section id="tentang" class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Tentang UKM IKM Indonesia</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+Organisasi yang berdedikasi untuk mengembangkan Usaha Kecil Menengah dan Industri Kecil Menengah di Indonesia
+</p>
+</div>
+
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div>
+<h3 class="text-2xl font-bold text-gray-900 mb-6">Visi & Misi Kami</h3>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+<span class="text-blue-600 font-bold">V</span>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-2">Visi</h4>
+<p class="text-gray-600">Menjadi katalisator utama dalam pemberdayaan ekonomi masyarakat Indonesia melalui pengembangan UKM dan IKM yang berkelanjutan</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-4">
+<span class="text-green-600 font-bold">M</span>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-2">Misi</h4>
+<p class="text-gray-600">Memberikan pelatihan, pendampingan, dan akses modal kepada masyarakat rentan untuk mengembangkan usaha lokal yang berdampak positif</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl">
+<div class="text-center">
+<div class="w-32 h-32 mx-auto mb-6 bg-blue-600 rounded-full flex items-center justify-center">
+<svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+</svg>
+</div>
+<h4 class="text-xl font-bold text-gray-900 mb-2">Fokus Pemberdayaan</h4>
+<p class="text-gray-600">Masyarakat rentan, UMKM tradisional, dan komunitas lokal di seluruh Indonesia</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Program Section -->
+<section id="program" class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Program Pemberdayaan</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+Program komprehensif untuk mengembangkan usaha lokal dan meningkatkan kesejahteraan masyarakat
+</p>
+</div>
+
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Program 1 -->
+<div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+<div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+<svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+</svg>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-4">Pelatihan Kewirausahaan</h3>
+<p class="text-gray-600 mb-6">Program pelatihan komprehensif mulai dari dasar-dasar bisnis, manajemen keuangan, hingga strategi pemasaran digital</p>
+<ul class="space-y-2 text-sm text-gray-600">
+<li class="flex items-center">
+<span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+Pelatihan 40 jam per batch
+</li>
+<li class="flex items-center">
+<span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+Sertifikat resmi
+</li>
+<li class="flex items-center">
+<span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+Pendampingan 6 bulan
+</li>
+</ul>
+</div>
+
+<!-- Program 2 -->
+<div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+<div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+<svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+</svg>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-4">Akses Permodalan</h3>
+<p class="text-gray-600 mb-6">Memfasilitasi akses modal usaha melalui kemitraan dengan lembaga keuangan dan program hibah pemerintah</p>
+<ul class="space-y-2 text-sm text-gray-600">
+<li class="flex items-center">
+<span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
+Modal Rp 5-50 juta
+</li>
+<li class="flex items-center">
+<span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
+Bunga kompetitif
+</li>
+<li class="flex items-center">
+<span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
+Proses mudah & cepat
+</li>
+</ul>
+</div>
+
+<!-- Program 3 -->
+<div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+<div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+<svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+</svg>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-4">Pengembangan Produk</h3>
+<p class="text-gray-600 mb-6">Bantuan teknis untuk meningkatkan kualitas produk, kemasan, dan standarisasi sesuai kebutuhan pasar</p>
+<ul class="space-y-2 text-sm text-gray-600">
+<li class="flex items-center">
+<span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
+Konsultasi ahli
+</li>
+<li class="flex items-center">
+<span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
+Desain kemasan
+</li>
+<li class="flex items-center">
+<span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
+Sertifikasi halal/BPOM
+</li>
+</ul>
+</div>
+
+<!-- Program 4 -->
+<div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+<div class="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
+<svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+</svg>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-4">Pemasaran Digital</h3>
+<p class="text-gray-600 mb-6">Pelatihan dan pendampingan pemasaran online melalui media sosial, marketplace, dan website</p>
+<ul class="space-y-2 text-sm text-gray-600">
+<li class="flex items-center">
+<span class="w-2 h-2 bg-orange-600 rounded-full mr-3"></span>
+Social media marketing
+</li>
+<li class="flex items-center">
+<span class="w-2 h-2 bg-orange-600 rounded-full mr-3"></span>
+E-commerce setup
+</li>
+<li class="flex items-center">
+<span class="w-2 h-2 bg-orange-600 rounded-full mr-3"></span>
+Content creation
+</li>
+</ul>
+</div>
+
+<!-- Program 5 -->
+<div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+<div class="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center mb-6">
+<svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+</svg>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-4">Jaringan Komunitas</h3>
+<p class="text-gray-600 mb-6">Membangun ekosistem UKM yang saling mendukung melalui komunitas, event networking, dan kolaborasi bisnis</p>
+<ul class="space-y-2 text-sm text-gray-600">
+<li class="flex items-center">
+<span class="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
+Networking events
+</li>
+<li class="flex items-center">
+<span class="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
+Business matching
+</li>
+<li class="flex items-center">
+<span class="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
+Mentorship program
+</li>
+</ul>
+</div>
+
+<!-- Program 6 -->
+<div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+<div class="w-16 h-16 bg-teal-100 rounded-xl flex items-center justify-center mb-6">
+<svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+</svg>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-4">Sertifikasi & Legalitas</h3>
+<p class="text-gray-600 mb-6">Bantuan pengurusan legalitas usaha, sertifikasi produk, dan perizinan yang diperlukan untuk mengembangkan bisnis</p>
+<ul class="space-y-2 text-sm text-gray-600">
+<li class="flex items-center">
+<span class="w-2 h-2 bg-teal-600 rounded-full mr-3"></span>
+NIB & OSS
+</li>
+<li class="flex items-center">
+<span class="w-2 h-2 bg-teal-600 rounded-full mr-3"></span>
+NPWP & PKP
+</li>
+<li class="flex items-center">
+<span class="w-2 h-2 bg-teal-600 rounded-full mr-3"></span>
+Merek dagang
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+
+
+<!-- Documentation Section -->
+<section id="documentation" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Dampak Nyata</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+Pencapaian dan dampak positif yang telah kami wujudkan bersama mitra UKM di seluruh Indonesia
+</p>
+    </div>
+
+     <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide"><img src="img/ukm/46.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/ukm/47.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/ukm/49.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/ukm/50.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/ukm/51.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/ukm/52.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/ukm/53.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/ukm/54.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/ukm/55.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/ukm/74.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/ukm/75.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/ukm/76.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/ukm/78.jpg" alt=""></div>
+        <div class="swiper-slide"><img src="img/ukm/79.jpg" alt=""></div>
+       
+       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Statistics -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+<div class="text-center">
+<div class="text-4xl md:text-5xl font-bold text-blue-600 mb-2">180</div>
+<p class="text-gray-600">UKM Terberdayakan</p>
+</div>
+<div class="text-center">
+<div class="text-4xl md:text-5xl font-bold text-green-600 mb-2">5</div>
+<p class="text-gray-600">Kota/Kabupaten</p>
+</div>
+<div class="text-center">
+<div class="text-4xl md:text-5xl font-bold text-purple-600 mb-2">85%</div>
+<p class="text-gray-600">Tingkat Keberhasilan</p>
+</div>
+<div class="text-center">
+<div class="text-4xl md:text-5xl font-bold text-orange-600 mb-2">10M</div>
+<p class="text-gray-600">Modal Tersalurkan</p>
+</div>
+</div>
+
+<!-- Success Stories -->
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8">
+    <div class="text-center mb-6">
+        <div class="w-20 h-20 rounded-full mx-auto mb-4 overflow-hidden">
+            <img src="img/TIM/23.jpg" alt="Foto" class="w-full h-full object-cover">
+        </div>
+<h4 class="text-xl font-bold text-gray-900">Sari Handayani</h4>
+<p class="text-gray-600">Pengrajin Batik, Yogyakarta</p>
+</div>
+<p class="text-gray-700 italic mb-4">
+"Berkat program UKM IKM, usaha batik saya berkembang pesat. Dari yang awalnya hanya menjual di pasar lokal, sekarang produk saya sudah diekspor ke Malaysia dan Singapura."
+</p>
+<div class="text-sm text-blue-600 font-semibold">
+Omzet meningkat 400% dalam 2 tahun
+</div>
+</div>
+
+<div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8">
+<div class="text-center mb-6">
+ <div class="w-20 h-20 rounded-full mx-auto mb-4 overflow-hidden">
+            <img src="img/TIM/25.jpg" alt="Foto" class="w-full h-full object-cover">
+        </div>
+<h4 class="text-xl font-bold text-gray-900">Budi Santoso</h4>
+<p class="text-gray-600">Produsen Keripik, Malang</p>
+</div>
+<p class="text-gray-700 italic mb-4">
+"Program pelatihan digital marketing sangat membantu. Sekarang saya bisa menjual keripik singkong melalui marketplace dan media sosial dengan jangkauan yang lebih luas."
+</p>
+<div class="text-sm text-green-600 font-semibold">
+Mempekerjakan 15 orang dari lingkungan sekitar
+</div>
+</div>
+
+<div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8">
+<div class="text-center mb-6">
+ <div class="w-20 h-20 rounded-full mx-auto mb-4 overflow-hidden">
+            <img src="img/TIM/24.jpg" alt="Foto" class="w-full h-full object-cover">
+        </div>
+<h4 class="text-xl font-bold text-gray-900">Ratna Sari</h4>
+<p class="text-gray-600">Produsen Jamu, Solo</p>
+</div>
+<p class="text-gray-700 italic mb-4">
+"Dengan bantuan sertifikasi BPOM dan kemasan yang menarik, produk jamu tradisional saya kini dipercaya konsumen dan masuk ke minimarket besar."
+</p>
+<div class="text-sm text-purple-600 font-semibold">
+Produk tersedia di 50+ outlet retail
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-20 hero-gradient text-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<h2 class="text-3xl md:text-4xl font-bold mb-6">
+Siap Mengembangkan Usaha Anda?
+</h2>
+<p class="text-xl mb-8 max-w-2xl mx-auto">
+Bergabunglah dengan ribuan UKM lainnya yang telah merasakan dampak positif program pemberdayaan kami
+</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button  class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-semibold py-3 px-8 rounded-lg transition duration-300">
+<a href="https://forms.gle/eLBL3Tqqg44ny8ed8">Daftar Program Sekarang</a>
+</button>
+<button onclick="scrollToSection('kontak')" class="border-2 border-white hover:bg-white hover:text-blue-600 font-semibold py-3 px-8 rounded-lg transition duration-300">
+Konsultasi Gratis
+</button>
+</div>
+</div>
+</section>
+
+<!-- Kontak Section -->
+<section id="kontak" class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Hubungi Kami</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">
+Tim kami siap membantu Anda mengembangkan usaha dan meningkatkan kesejahteraan masyarakat
+</p>
+</div>
+
+<div class="grid md:grid-cols-2 gap-12">
+<!-- Contact Info -->
+<div>
+<h3 class="text-2xl font-bold text-gray-900 mb-8">Informasi Kontak</h3>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+<svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+</svg>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-1">Alamat Kantor</h4>
+<p class="text-gray-600">Jl. Cempedak Raya No.22, Leuwinanggung, Kec. Tapos, Kota Depok, Jawa Barat 16456</p>
+</div>
+</div>
+
+<div class="flex items-start">
+<div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+<svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+</svg>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-1">Telepon</h4>
+<p class="text-gray-600">+62 877 14 777 039
+</p>
+
+</div>
+</div>
+
+<div class="flex items-start">
+<div class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+<svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+</svg>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-1">Email</h4>
+<p class="text-gray-600">akselkanindonesia@gmail.com</p>
+
+</div>
+</div>
+
+<div class="flex items-start">
+<div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
+<svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+</svg>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-1">Jam Operasional</h4>
+<p class="text-gray-600">Senin - Jumat: 08:00 - 17:00 WIB</p>
+<p class="text-gray-600">Sabtu: 08:00 - 12:00 WIB</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Contact Form -->
+<div class="bg-white rounded-2xl p-8 shadow-lg" hidden>
+<h3 class="text-2xl font-bold text-gray-900 mb-6">Kirim Pesan</h3>
+<form id="contactForm" class="space-y-6">
+<div class="grid md:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Nama Lengkap</label>
+<input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Masukkan nama lengkap">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Nomor Telepon</label>
+<input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Masukkan nomor telepon">
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+<input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Masukkan alamat email">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Jenis Usaha</label>
+<select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+<option value="">Pilih jenis usaha</option>
+<option value="makanan">Makanan & Minuman</option>
+<option value="fashion">Fashion & Tekstil</option>
+<option value="kerajinan">Kerajinan Tangan</option>
+<option value="pertanian">Pertanian & Perkebunan</option>
+<option value="teknologi">Teknologi & Digital</option>
+<option value="lainnya">Lainnya</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Pesan</label>
+<textarea rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Ceritakan tentang usaha Anda dan bantuan apa yang dibutuhkan"></textarea>
+</div>
+<button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+Kirim Pesan
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid md:grid-cols-4 gap-8">
+<div>
+<h3 class="text-2xl font-bold mb-4">UKM IKM Indonesia</h3>
+<p class="text-gray-400 mb-4">Memberdayakan usaha lokal untuk Indonesia yang lebih sejahtera dan berkelanjutan.</p>
+<div class="flex space-x-4">
+
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Program</h4>
+<ul class="space-y-2 text-gray-400">
+<li><a href="#" class="hover:text-white transition duration-300">Pelatihan Kewirausahaan</a></li>
+<li><a href="#" class="hover:text-white transition duration-300">Akses Permodalan</a></li>
+<li><a href="#" class="hover:text-white transition duration-300">Pengembangan Produk</a></li>
+<li><a href="#" class="hover:text-white transition duration-300">Pemasaran Digital</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Layanan</h4>
+<ul class="space-y-2 text-gray-400">
+<li><a href="#" class="hover:text-white transition duration-300">Konsultasi Bisnis</a></li>
+<li><a href="#" class="hover:text-white transition duration-300">Pendampingan UKM</a></li>
+<li><a href="#" class="hover:text-white transition duration-300">Sertifikasi Produk</a></li>
+<li><a href="#" class="hover:text-white transition duration-300">Networking</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Informasi</h4>
+<ul class="space-y-2 text-gray-400">
+<li><a href="#" class="hover:text-white transition duration-300">Berita & Artikel</a></li>
+<li><a href="#" class="hover:text-white transition duration-300">Event & Workshop</a></li>
+<li><a href="#" class="hover:text-white transition duration-300">Laporan Tahunan</a></li>
+<li><a href="#" class="hover:text-white transition duration-300">Karir</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+<p>&copy; 2025 UKM IKM Indonesia. Semua hak cipta dilindungi undang-undang.</p>
+</div>
+</div>
+</footer>
+
+<!-- Modal Pendaftaran -->
+<div id="daftarModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+<div class="bg-white rounded-2xl max-w-md w-full p-8 relative">
+<button onclick="closeModal('daftarModal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+</svg>
+</button>
+<h3 class="text-2xl font-bold text-gray-900 mb-6">Daftar Program UKM</h3>
+<form id="daftarForm" class="space-y-4">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Nama Lengkap</label>
+<input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Masukkan nama lengkap">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+<input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Masukkan email">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Nomor WhatsApp</label>
+<input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Masukkan nomor WhatsApp">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Program yang Diminati</label>
+<select required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+<option value="">Pilih program</option>
+<option value="pelatihan">Pelatihan Kewirausahaan</option>
+<option value="modal">Akses Permodalan</option>
+<option value="produk">Pengembangan Produk</option>
+<option value="digital">Pemasaran Digital</option>
+<option value="komunitas">Jaringan Komunitas</option>
+<option value="sertifikasi">Sertifikasi & Legalitas</option>
+</select>
+</div>
+<button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+Daftar Sekarang
+</button>
+</form>
+</div>
+</div>
+
+<script>
+// Mobile menu toggle
+document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenu.classList.toggle('hidden');
+});
+
+// Smooth scrolling
+function scrollToSection(sectionId) {
+document.getElementById(sectionId).scrollIntoView({
+behavior: 'smooth'
+});
+}
+
+// Modal functions
+function openModal(modalId) {
+document.getElementById(modalId).classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+}
+
+function closeModal(modalId) {
+document.getElementById(modalId).classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+
+// Close modal when clicking outside
+document.getElementById('daftarModal').addEventListener('click', function(e) {
+if (e.target === this) {
+closeModal('daftarModal');
+}
+});
+
+// Form submissions
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+e.preventDefault();
+
+// Create custom success modal
+const successModal = document.createElement('div');
+successModal.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4';
+successModal.innerHTML = `
+<div class="bg-white rounded-2xl max-w-md w-full p-8 text-center">
+<div class="w-16 h-16 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+<svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+</svg>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Pesan Terkirim!</h3>
+<p class="text-gray-600 mb-6">Terima kasih atas minat Anda. Tim kami akan menghubungi Anda dalam 1x24 jam.</p>
+<button onclick="this.parentElement.parentElement.remove()" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300">
+Tutup
+</button>
+</div>
+`;
+document.body.appendChild(successModal);
+
+// Reset form
+this.reset();
+});
+
+document.getElementById('daftarForm').addEventListener('submit', function(e) {
+e.preventDefault();
+
+// Create custom success modal
+const successModal = document.createElement('div');
+successModal.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4';
+successModal.innerHTML = `
+<div class="bg-white rounded-2xl max-w-md w-full p-8 text-center">
+<div class="w-16 h-16 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+<svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+</svg>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-2">Pendaftaran Berhasil!</h3>
+<p class="text-gray-600 mb-6">Selamat! Anda telah terdaftar dalam program UKM IKM. Tim kami akan menghubungi Anda segera untuk informasi lebih lanjut.</p>
+<button onclick="this.parentElement.parentElement.remove(); closeModal('daftarModal')" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300">
+Tutup
+</button>
+</div>
+`;
+document.body.appendChild(successModal);
+
+// Reset form
+this.reset();
+});
+
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+const navbar = document.querySelector('nav');
+if (window.scrollY > 100) {
+navbar.classList.add('shadow-xl');
+} else {
+navbar.classList.remove('shadow-xl');
+}
+});
+
+// Active navigation highlighting
+window.addEventListener('scroll', function() {
+const sections = ['beranda', 'tentang', 'program', 'dampak', 'kontak'];
+const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+let current = '';
+sections.forEach(section => {
+const element = document.getElementById(section);
+const rect = element.getBoundingClientRect();
+if (rect.top <= 100 && rect.bottom >= 100) {
+current = section;
+}
+});
+
+navLinks.forEach(link => {
+link.classList.remove('text-blue-600');
+link.classList.add('text-gray-700');
+if (link.getAttribute('href') === `#${current}`) {
+link.classList.remove('text-gray-700');
+link.classList.add('text-blue-600');
+}
+});
+});
+
+// Add click handlers for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href').substring(1);
+scrollToSection(targetId);
+
+// Close mobile menu if open
+document.getElementById('mobile-menu').classList.add('hidden');
+});
+});
+</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96e4bab120094adc',t:'MTc1NTA1MTU4NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+<script>
+(() => {
+  const track = document.querySelector('.carousel-track');
+  let items = Array.from(track.children);
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+
+  const VISIBLE = 3;
+  const ITEM_PERCENT = 100 / VISIBLE;
+
+  // Duplikat semua item di kiri & kanan
+  items.forEach(item => {
+    const cloneFront = item.cloneNode(true);
+    const cloneBack = item.cloneNode(true);
+    track.appendChild(cloneFront);
+    track.insertBefore(cloneBack, items[0]);
+  });
+
+  // Refresh items
+  items = Array.from(track.children);
+
+  // Mulai di tengah data
+  let currentIndex = items.length / 2;
+  let isTransitioning = false;
+
+  function setTransform(noAnim = false) {
+    track.style.transition = noAnim ? 'none' : 'transform 0.5s ease';
+    track.style.transform = `translateX(-${(currentIndex - 1) * ITEM_PERCENT}%)`;
+  }
+
+  function highlightCenter() {
+    items.forEach(el => el.classList.remove('center'));
+    if (items[currentIndex]) items[currentIndex].classList.add('center');
+  }
+
+  function goNext() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    currentIndex++;
+    setTransform();
+    highlightCenter();
+  }
+
+  function goPrev() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    currentIndex--;
+    setTransform();
+    highlightCenter();
+  }
+
+  nextBtn.addEventListener('click', goNext);
+  prevBtn.addEventListener('click', goPrev);
+
+  track.addEventListener('transitionend', () => {
+    isTransitioning = false;
+
+    const REAL_COUNT = items.length / 3; // aslinya sebelum cloning
+    if (currentIndex <= VISIBLE) {
+      // Lompat ke tengah tanpa animasi
+      currentIndex += REAL_COUNT;
+      setTransform(true);
+      highlightCenter();
+    }
+    if (currentIndex >= items.length - VISIBLE) {
+      currentIndex -= REAL_COUNT;
+      setTransform(true);
+      highlightCenter();
+    }
+  });
+  // Scroll pakai mouse wheel
+const carouselContainer = document.querySelector('.carousel-container');
+carouselContainer.addEventListener('wheel', (e) => {
+  e.preventDefault();
+  if (e.deltaY > 0) {
+    goNext();
+  } else {
+    goPrev();
+  }
+});
+
+
+  // Init
+  setTransform(true);
+  highlightCenter();
+})();
+</script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 3,
+  spaceBetween: 20, // jarak antar gambar
+  loop: true,
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
+  },
+  speed: 3000, // kecepatan gerak
+  freeMode: true,
+  breakpoints: {
+    320: { slidesPerView: 1.2, spaceBetween: 20 },
+    640: { slidesPerView: 2.2, spaceBetween: 20 },
+    1024: { slidesPerView: 3, spaceBetween: 20 }
+  }
+});
+</script>
