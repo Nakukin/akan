@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akselera Print - Premium Custom Apparel & Mugs</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#1a365d',
+secondary: '#2d3748',
+accent: '#ed8936',
+gold: '#d69e2e'
+}
+}
+}
+}
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+body { font-family: 'Inter', sans-serif; }
+
+.notification {
+animation: slideIn 0.5s ease-out, slideOut 0.5s ease-in 4.5s forwards;
+}
+
+@keyframes slideIn {
+from { transform: translateX(100%); opacity: 0; }
+to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOut {
+from { transform: translateX(0); opacity: 1; }
+to { transform: translateX(100%); opacity: 0; }
+}
+
+.hero-gradient {
+background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+}
+
+.card-hover {
+transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+transform: translateY(-8px);
+box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.carousel-smooth {
+transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.carousel-smooth.no-transition {
+transition: none;
+}
+
+@keyframes infiniteSlide {
+0% { transform: translateX(0%); }
+33.33% { transform: translateX(-100%); }
+66.66% { transform: translateX(-200%); }
+100% { transform: translateX(-300%); }
+}
+
+.carousel-auto {
+animation: infiniteSlide 15s linear infinite;
+}
+
+.gallery-item {
+transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+transform: scale(1.02);
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Notification Container -->
+<div id="notificationContainer" class="fixed top-4 right-4 z-50 space-y-2"></div>
+
+<!-- Header -->
+<header class="bg-white shadow-lg sticky top-0 z-40">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center py-4">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 bg-gradient-to-r from-primary to-accent rounded-lg flex items-center justify-center">
+<span class="text-white font-bold text-lg"><img src="file (17).png"></span>
+</div>
+<h1 class="text-2xl font-bold text-primary">Akselera Print</h1>
+</div>
+<nav class="hidden md:flex space-x-8">
+<a href="#home" class="text-secondary hover:text-accent transition-colors font-medium">Beranda</a>
+<a href="#products" class="text-secondary hover:text-accent transition-colors font-medium">Produk</a>
+<a href="#gallery" class="text-secondary hover:text-accent transition-colors font-medium">Galeri</a>
+<a href="#contact" class="text-secondary hover:text-accent transition-colors font-medium">Kontak</a>
+</nav>
+<a href="https://wa.me/6285814004513?text=Halo%20saya%20mau%20pesan%20custom%20mug" 
+   target="_blank"
+   class="w-40 bg-accent hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition-colors text-center block">
+   Pesan Sekarang
+</a>
+
+</button>
+</div>
+</div>
+</header>
+
+<!-- Hero Section -->
+<section id="home" class="relative text-white py-20 bg-cover bg-center bg-no-repeat" 
+  style="background-image: url('3.jpg');">
+  
+  <!-- 🔥 Overlay kiri atas -->
+  <div class="absolute top-6 left-6 bg-black/60 text-white px-4 py-2 rounded-lg shadow-lg">
+    <h3 class="text-sm font-semibold">🔥 Promo Spesial</h3>
+    <p class="text-xs">Free Design Eksklusif</p>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-black/50 rounded-xl p-8">
+    <div class="text-center">
+      <h2 class="text-5xl font-bold mb-6">Custom Premium Quality</h2>
+      <p class="text-xl mb-8 text-gray-200 max-w-2xl mx-auto">
+        Wujudkan kreativitas Anda dengan layanan custom baju dan mug berkualitas tinggi.
+        Desain unik, bahan premium, hasil memuaskan.
+      </p>
+<section class="py-12 flex justify-center">
+  <div class="flex flex-col sm:flex-row gap-4">
+            <a href="https://wa.me/6285814004513?text=Halo%20saya%20mau%20pesan%20custom%20mug" 
+       target="_blank"
+       class="bg-accent hover:bg-orange-600 text-white px-8 py-5 rounded-lg font-semibold text-lg transition-colors text-center">
+      Mulai Custom Sekarang
+    </a>
+
+        <button class="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+          Lihat Portfolio
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Products Section -->
+<section id="products" class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h3 class="text-4xl font-bold text-primary mb-4">Produk Unggulan</h3>
+<p class="text-gray-600 text-lg max-w-2xl mx-auto">
+Pilihan produk custom terbaik dengan kualitas premium dan harga terjangkau
+</p>
+</div>
+
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<!-- Custom Baju -->
+<div class="card-hover bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg">
+<div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-6">
+<svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+<path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+</svg>
+</div>
+<h4 class="text-2xl font-bold text-primary mb-4">Custom Baju (Start From Rp. 50.0000)</h4>
+<p class="text-gray-600 mb-6">
+Kaos, hoodie, kemeja dengan desain sesuai keinginan Anda.
+Bahan berkualitas tinggi, sablon tahan lama.
+</p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-center text-gray-700">
+<span class="w-2 h-2 bg-accent rounded-full mr-3"></span>
+Bahan cotton combed 30s/24s
+</li>
+<li class="flex items-center text-gray-700">
+<span class="w-2 h-2 bg-accent rounded-full mr-3"></span>
+Sablon DTF/Screnn berkualitas
+</li>
+<li class="flex items-center text-gray-700">
+<span class="w-2 h-2 bg-accent rounded-full mr-3"></span>
+Tersedia semua ukuran
+</li>
+</ul>
+<a href="https://wa.me/6285814004513?text=Halo%20saya%20mau%20pesan%20custom%20mug" 
+   target="_blank"
+   class="w-full bg-accent hover:bg-blue-900 text-white py-3 rounded-lg font-semibold transition-colors text-center block">
+   Pesan Custom Mug
+</a>
+
+</div>
+
+<!-- Custom Mug -->
+<div class="card-hover bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg">
+<div class="w-16 h-16 bg-accent rounded-xl flex items-center justify-center mb-6">
+<svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+<path d="M3 12v3c0 1.657 1.343 3 3 3h8c1.657 0 3-1.343 3-3v-3M3 12V6c0-1.657 1.343-3 3-3h8c1.657 0 3 1.343 3 3v6M3 12h14"/>
+</svg>
+</div>
+<h4 class="text-2xl font-bold text-primary mb-4">Custom Mug (Start From Rp. 20.0000)</h4>
+<p class="text-gray-600 mb-6">
+Mug ceramic premium dengan printing berkualitas tinggi.
+Cocok untuk hadiah atau koleksi pribadi.
+</p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-center text-gray-700">
+<span class="w-2 h-2 bg-accent rounded-full mr-3"></span>
+Ceramic grade A
+</li>
+<li class="flex items-center text-gray-700">
+<span class="w-2 h-2 bg-accent rounded-full mr-3"></span>
+Printing tahan panas & cuci
+</li>
+<li class="flex items-center text-gray-700">
+<span class="w-2 h-2 bg-accent rounded-full mr-3"></span>
+Kapasitas 325ml & 450ml
+</li>
+</ul>
+<a href="https://wa.me/6285814004513?text=Halo%20saya%20mau%20pesan%20custom%20mug" 
+   target="_blank"
+   class="w-full bg-accent hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition-colors text-center block">
+   Pesan Custom Mug
+</a>
+
+</div>
+</div>
+</div>
+</section>
+
+<!-- Link Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<!-- Swiper -->
+<section id="gallery">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="63.jpg" alt="Gambar 1"></div>
+      <div class="swiper-slide"><img src="64.jpg" alt="Gambar 2"></div>
+      <div class="swiper-slide"><img src="65.jpg" alt="Gambar 3"></div>
+      <div class="swiper-slide"><img src="66.jpg" alt="Gambar 4"></div>
+      <div class="swiper-slide"><img src="67.jpg" alt="Gambar 5"></div>
+      <div class="swiper-slide"><img src="68.jpg" alt="Gambar 6"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 3,
+  spaceBetween: 20,
+  loop: true,
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
+  },
+  speed: 3000,
+  freeMode: true,
+  breakpoints: {
+    320: { slidesPerView: 1.2, spaceBetween: 15 },  // hp kecil
+    480: { slidesPerView: 1.5, spaceBetween: 15 },  // hp sedang
+    640: { slidesPerView: 2.2, spaceBetween: 20 },  // tablet kecil
+    1024: { slidesPerView: 3, spaceBetween: 20 }    // laptop/desktop
+  }
+});
+</script>
+
+<style>
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;       /* biar proporsional */
+  max-height: 280px;  /* batas tinggi */
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+</style>
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-white">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h3 class="text-4xl font-bold text-primary mb-4">Hubungi Kami</h3>
+<p class="text-gray-600 text-lg">Siap membantu mewujudkan custom impian Anda</p>
+</div>
+
+<div class="grid md:grid-cols-2 gap-12">
+<div>
+<h4 class="text-2xl font-bold text-primary mb-6">Informasi Kontak</h4>
+<div class="space-y-4">
+<div class="flex items-center">
+<div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mr-4">
+<span class="text-white">📱</span>
+</div>
+<div>
+<p class="font-semibold text-gray-800">WhatsApp</p>
+<p class="text-gray-600">+62 858-1400-4513</p>
+</div>
+</div>
+
+<div class="flex items-center">
+<div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mr-4">
+<span class="text-white">📧</span>
+</div>
+<div>
+<p class="font-semibold text-gray-800">Email</p>
+<p class="text-gray-600">akselkanindonesia@gmail.com</p>
+</div>
+</div>
+
+<div class="flex items-center">
+<div class="w-12 h-12 bg-gold rounded-lg flex items-center justify-center mr-4">
+<span class="text-white">📍</span>
+</div>
+<div>
+<p class="font-semibold text-gray-800">Alamat</p>
+<p class="text-gray-600">Jalan Cempedak Raya No.22, Leuwinanggung, Kec. Tapos, Kota Depok, Jawa Barat 16456</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Kirim Pesan
+<div class="bg-gray-50 p-8 rounded-2xl">
+<h4 class="text-xl font-bold text-primary mb-6">Kirim Pesan (Demo)</h4>
+<form class="space-y-4">
+<input type="text" placeholder="Nama Lengkap" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent">
+<input type="email" placeholder="Email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent">
+<textarea placeholder="Pesan Anda" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent"></textarea>
+<button type="button" class="w-full bg-primary hover:bg-blue-900 text-white py-3 rounded-lg font-semibold transition-colors">
+Kirim Pesan (Demo)
+-->
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-primary text-white py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center">
+<div class="flex items-center justify-center space-x-3 mb-4">
+<div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
+<span class="text-white font-bold text-lg"><img src="file (17).png" ></span>
+</div>
+<h1 class="text-2xl font-bold">Akselera Print</h1>
+</div>
+<p class="text-gray-300 mb-6">Premium Custom Apparel & Mugs</p>
+<p class="text-gray-400">&copy; 2025 AkseleraPrint. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+<script>
+// Notification data
+const notifications = [
+{ name: "Arkhan", product: "custom mug", time: "2 menit yang lalu" },
+{ name: "Sabil", product: "baju custom", time: "5 menit yang lalu" },
+{ name: "Maya", product: "hoodie custom", time: "8 menit yang lalu" },
+{ name: "Doni", product: "custom mug anniversary", time: "12 menit yang lalu" },
+{ name: "Rina", product: "kaos event custom", time: "15 menit yang lalu" },
+{ name: "Budi", product: "mug hadiah custom", time: "18 menit yang lalu" },
+{ name: "Sari", product: "baju komunitas custom", time: "22 menit yang lalu" },
+{ name: "Andi", product: "custom mug wisuda", time: "25 menit yang lalu" },
+{ name: "Dewi", product: "kaos couple custom", time: "28 menit yang lalu" },
+{ name: "Fajar", product: "hoodie gaming custom", time: "32 menit yang lalu" },
+{ name: "Lina", product: "mug ulang tahun custom", time: "35 menit yang lalu" },
+{ name: "Reza", product: "baju seragam custom", time: "38 menit yang lalu" },
+{ name: "Indah", product: "custom mug foto", time: "42 menit yang lalu" },
+{ name: "Bayu", product: "kaos band custom", time: "45 menit yang lalu" },
+{ name: "Tika", product: "hoodie couple custom", time: "48 menit yang lalu" },
+{ name: "Hendra", product: "mug kantor custom", time: "52 menit yang lalu" },
+{ name: "Novi", product: "baju olahraga custom", time: "55 menit yang lalu" },
+{ name: "Agus", product: "custom mug keluarga", time: "58 menit yang lalu" },
+{ name: "Putri", product: "kaos graduation custom", time: "1 jam yang lalu" },
+{ name: "Dimas", product: "hoodie startup custom", time: "1 jam yang lalu" },
+{ name: "Sinta", product: "mug valentine custom", time: "1 jam yang lalu" },
+{ name: "Yoga", product: "baju tim custom", time: "1 jam yang lalu" },
+{ name: "Ayu", product: "custom mug motivasi", time: "1 jam yang lalu" },
+{ name: "Rizki", product: "kaos distro custom", time: "1 jam yang lalu" },
+{ name: "Mila", product: "hoodie fashion custom", time: "1 jam yang lalu" },
+{ name: "Eko", product: "mug bisnis custom", time: "1 jam yang lalu" },
+{ name: "Dina", product: "baju anak custom", time: "1 jam yang lalu" },
+{ name: "Wahyu", product: "custom mug quote", time: "1 jam yang lalu" },
+{ name: "Siska", product: "kaos komunitas custom", time: "1 jam yang lalu" },
+{ name: "Arif", product: "hoodie brand custom", time: "1 jam yang lalu" }
+];
+
+let notificationIndex = 0;
+
+function createNotification(data) {
+const notification = document.createElement('div');
+notification.className = 'notification bg-white border-l-4 border-accent shadow-lg rounded-lg p-4 max-w-sm';
+
+notification.innerHTML = `
+<div class="flex items-start">
+<div class="flex-shrink-0">
+<div class="w-10 h-10 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center">
+<span class="text-white font-semibold text-sm">${data.name.charAt(0)}</span>
+</div>
+</div>
+<div class="ml-3 flex-1">
+<p class="text-sm font-semibold text-gray-800">
+<span class="text-accent">${data.name}</span> baru saja membeli
+</p>
+<p class="text-sm text-gray-600 font-medium">${data.product}</p>
+<p class="text-xs text-gray-500 mt-1">${data.time}</p>
+</div>
+<div class="ml-2">
+<span class="text-green-500 text-lg">✓</span>
+</div>
+</div>
+`;
+
+return notification;
+}
+
+function showNotification() {
+const container = document.getElementById('notificationContainer');
+const data = notifications[notificationIndex];
+const notification = createNotification(data);
+
+container.appendChild(notification);
+
+// Remove notification after 5 seconds
+setTimeout(() => {
+if (notification.parentNode) {
+notification.parentNode.removeChild(notification);
+}
+}, 5000);
+
+notificationIndex = (notificationIndex + 1) % notifications.length;
+}
+
+// Show first notification after 3 seconds, then every 15-20 seconds randomly
+setTimeout(() => {
+showNotification();
+
+function scheduleNextNotification() {
+// Random interval between 15-20 seconds (15000-20000 milliseconds)
+const randomInterval = Math.floor(Math.random() * 5000) + 15000;
+setTimeout(() => {
+showNotification();
+scheduleNextNotification(); // Schedule the next one
+}, randomInterval);
+}
+
+scheduleNextNotification();
+}, 3000);
+
+// Gallery Carousel functionality
+let currentSlide = 0;
+const totalSlides = 3;
+const carousel = document.getElementById('galleryCarousel');
+const dots = document.querySelectorAll('.carousel-dot');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+let autoSlideInterval;
+let isTransitioning = false;
+
+function updateCarousel(instant = false) {
+if (instant) {
+carousel.classList.add('no-transition');
+carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+// Force reflow
+carousel.offsetHeight;
+carousel.classList.remove('no-transition');
+} else {
+carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
+// Update dots (only show 3 dots for 3 main slides)
+const dotIndex = currentSlide >= totalSlides ? 0 : currentSlide;
+dots.forEach((dot, index) => {
+if (index === dotIndex) {
+dot.classList.remove('bg-gray-300');
+dot.classList.add('bg-accent');
+} else {
+dot.classList.remove('bg-accent');
+dot.classList.add('bg-gray-300');
+}
+});
+}
+
+function nextSlide() {
+if (isTransitioning) return;
+
+isTransitioning = true;
+currentSlide++;
+
+updateCarousel();
+
+// If we've reached the duplicate slide (slide 3), reset to slide 0 after transition
+if (currentSlide === totalSlides) {
+setTimeout(() => {
+currentSlide = 0;
+updateCarousel(true);
+isTransitioning = false;
+}, 800); // Match transition duration
+} else {
+setTimeout(() => {
+isTransitioning = false;
+}, 800);
+}
+}
+
+function prevSlide() {
+if (isTransitioning) return;
+
+isTransitioning = true;
+
+if (currentSlide === 0) {
+// Jump to duplicate slide instantly, then animate to slide 2
+currentSlide = totalSlides;
+updateCarousel(true);
+setTimeout(() => {
+currentSlide = totalSlides - 1;
+updateCarousel();
+setTimeout(() => {
+isTransitioning = false;
+}, 800);
+}, 50);
+} else {
+currentSlide--;
+updateCarousel();
+setTimeout(() => {
+isTransitioning = false;
+}, 800);
+}
+}
+
+function goToSlide(slideIndex) {
+if (isTransitioning) return;
+
+isTransitioning = true;
+currentSlide = slideIndex;
+updateCarousel();
+setTimeout(() => {
+isTransitioning = false;
+}, 800);
+}
+
+function startAutoSlide() {
+autoSlideInterval = setInterval(() => {
+nextSlide();
+}, 4000); // Auto slide every 4 seconds
+}
+
+function stopAutoSlide() {
+clearInterval(autoSlideInterval);
+}
+
+// Event listeners for carousel
+nextBtn.addEventListener('click', () => {
+nextSlide();
+stopAutoSlide();
+setTimeout(startAutoSlide, 6000); // Restart auto slide after 6 seconds
+});
+
+prevBtn.addEventListener('click', () => {
+prevSlide();
+stopAutoSlide();
+setTimeout(startAutoSlide, 6000); // Restart auto slide after 6 seconds
+});
+
+dots.forEach((dot, index) => {
+dot.addEventListener('click', () => {
+goToSlide(index);
+stopAutoSlide();
+setTimeout(startAutoSlide, 6000); // Restart auto slide after 6 seconds
+});
+});
+
+// Pause auto slide on hover
+const gallerySection = document.getElementById('gallery');
+gallerySection.addEventListener('mouseenter', stopAutoSlide);
+gallerySection.addEventListener('mouseleave', startAutoSlide);
+
+// Initialize carousel
+updateCarousel();
+
+// Start auto slide
+startAutoSlide();
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+const target = document.querySelector(this.getAttribute('href'));
+if (target) {
+target.scrollIntoView({
+behavior: 'smooth',
+block: 'start'
+});
+}
+});
+});
+
+// Button click handlers (excluding carousel buttons)
+document.querySelectorAll('button').forEach(button => {
+// Skip carousel navigation buttons
+if (button.id === 'prevBtn' || button.id === 'nextBtn' || button.classList.contains('carousel-dot')) {
+return;
+}
+
+button.addEventListener('click', function() {
+if (this.textContent.includes('Demo')) {
+alert('Ini adalah halaman demo. Untuk implementasi nyata, form ini akan mengirim pesan ke sistem backend.');
+} else {
+alert('Terima kasih atas minat Anda! Silakan hubungi kami melalui WhatsApp untuk konsultasi lebih lanjut.');
+}
+});
+});
+</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'971696c48004e77e',t:'MTc1NTU3NDQwMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

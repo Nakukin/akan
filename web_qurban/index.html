@@ -125,7 +125,9 @@ animation: pulse 2s infinite;
 </header>
 
 <!-- Hero Section -->
-<section id="beranda" class="py-20 bg-gradient-to-br from-blue-50 to-green-50">
+<section id="beranda" 
+  class="relative py-20 bg-cover bg-center bg-no-repeat" 
+  style="background-image: url('Tabungan\ Qurban\ \(1\).jpg');">
 <div class="container mx-auto px-4 text-center">
 <div class="max-w-4xl mx-auto">
 <h2 class="text-5xl font-bold text-biru-dongker mb-6">
@@ -135,10 +137,10 @@ Ayo Tabung Qurban
 </div>
 
 </h2>
-<p class="text-xl text-gray-700 mb-2 leading-relaxed">
+<p class="text-xl text-gray-900 mb-2 leading-relaxed">
 Qurban bareng AKAN ID bukan hanya ibadah, tapi juga membawa dampak nyata.
 </p>
-<p class="text-xl text-gray-700 leading-relaxed">
+<p class="text-xl text-gray-900 leading-relaxed">
 Bareng-bareng kita wujudkan <strong>#QurbanUntukPemberdayaan</strong> 🌾
 </p>
 
@@ -150,6 +152,9 @@ Bareng-bareng kita wujudkan <strong>#QurbanUntukPemberdayaan</strong> 🌾
 <button onclick="scrollToAbout()" class="border-2 border-biru-dongker text-biru-dongker hover:bg-biru-dongker hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300">
 Pelajari Lebih Lanjut
 </button>
+<button  class="border-2 border-biru-dongker text-biru-dongker hover:bg-biru-dongker hover:text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300">
+<a href="https://wa.me/6285711223367">Konsultasi</a></button>
+
 </div>
 
 <!-- Stats -->
@@ -185,7 +190,10 @@ Pilih paket yang sesuai dengan kemampuan Anda. Semua paket akan disalurkan kepad
 <!-- Paket Hemat -->
 <div class="card-hover bg-white border-2 border-gray-200 rounded-2xl p-8 text-center relative overflow-hidden">
 <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-hijau-lumut to-hijau-lumut-light"></div>
-<div class="text-6xl mb-4">🐐</div>
+<div class="mb-6 flex justify-center">
+  <img src="domba21-25.PNG" alt="Domba" 
+       class="w-40 h-32 object-cover rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105">
+</div>
 <h4 class="text-2xl font-bold text-biru-dongker mb-4">Paket Hemat</h4>
 <div class="text-4xl font-bold text-hijau-lumut mb-2">Rp. 1.800.000</div>
 <p class="text-gray-600 mb-6">18-20 Kg</p>
@@ -207,13 +215,15 @@ Pilih paket yang sesuai dengan kemampuan Anda. Semua paket akan disalurkan kepad
 <!-- Paket Standar	 -->
 <div class="card-hover bg-white border-2 border-hijau-lumut rounded-2xl p-8 text-center relative overflow-hidden">
 <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-biru-dongker to-hijau-lumut"></div>
-<div class="absolute top-4 right-4 bg-hijau-lumut text-white px-3 py-1 rounded-full text-sm font-bold">POPULER</div>
-<div class="text-6xl mb-4">🐐</div>
+<div class="flex justify-center items-center">
+  <img src="texel-domba-super-asal-e7409a8141.jpg" alt="Domba"        
+       class="w-40 h-32 object-cover rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105">
+</div>
+
 <h4 class="text-2xl font-bold text-biru-dongker mb-4">Paket Standar</h4>
 <div class="text-4xl font-bold text-hijau-lumut mb-2">Rp. 2.650.000	</div>
 <p class="text-gray-600 mb-6">21-25 Kg</p>
 <ul class="text-left space-y-2 mb-8">
-<li class="flex items-center"><span class="text-hijau-lumut mr-2">✓</span> Khusus disalurkan</li>
 <li class="flex items-center"><span class="text-hijau-lumut mr-2">✓</span> Hewan diawasi dokter	</li>
 <li class="flex items-center"><span class="text-hijau-lumut mr-2">✓</span> Sertifikat Qurban</li>
 <li class="flex items-center"><span class="text-hijau-lumut mr-2">✓</span> Pemotongan Sesuai Syariat</li>
@@ -230,7 +240,11 @@ Pilih paket yang sesuai dengan kemampuan Anda. Semua paket akan disalurkan kepad
 <!-- Paket Super -->
 <div class="card-hover bg-white border-2 border-gray-200 rounded-2xl p-8 text-center relative overflow-hidden">
 <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-biru-dongker to-hijau-lumut"></div>
-<div class="text-6xl mb-4">🐐</div>
+<div class="absolute top-4 right-4 bg-hijau-lumut text-white px-3 py-1 rounded-full text-sm font-bold">POPULER</div>
+<div class="mb-6 flex justify-center">
+  <img src="domba7.PNG" alt="Domba" 
+       class="w-40 h-32 object-cover rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105">
+</div>
 <h4 class="text-2xl font-bold text-biru-dongker mb-4">Paket Super</h4>
 <div class="text-4xl font-bold text-hijau-lumut mb-2">Rp. 3.100.000	</div>
 <p class="text-gray-600 mb-6">26-30 Kg</p>
@@ -252,10 +266,13 @@ Pilih paket yang sesuai dengan kemampuan Anda. Semua paket akan disalurkan kepad
 <!-- Paket Premium	 -->
 <div class="card-hover bg-white border-2 border-gray-200 rounded-2xl p-8 text-center relative overflow-hidden">
 <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-hijau-lumut to-hijau-lumut-light"></div>
-<div class="text-6xl mb-4">🐐</div>
+<div class="mb-6 flex justify-center">
+  <img src="domba31-40.PNG" alt="Domba" 
+       class="w-40 h-32 object-cover rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105">
+</div>
 <h4 class="text-2xl font-bold text-biru-dongker mb-4">Paket Premium	</h4>
 <div class="text-4xl font-bold text-hijau-lumut mb-2">Rp. 3.650.000	</div>
-<p class="text-gray-600 mb-6">31-40 Kg</p>
+<p class="text-gray-600 mb-6">30-35 Kg</p>
 <ul class="text-left space-y-2 mb-8">
 <li class="flex items-center"><span class="text-hijau-lumut mr-2">✓</span> Hewan diawasi dokter	</li>
 <li class="flex items-center"><span class="text-hijau-lumut mr-2">✓</span>Sertifikat Qurban	</li>
@@ -273,10 +290,13 @@ Pilih paket yang sesuai dengan kemampuan Anda. Semua paket akan disalurkan kepad
 <div class="card-hover bg-white border-2 border-hijau-lumut rounded-2xl p-8 text-center relative overflow-hidden">
 <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-biru-dongker to-hijau-lumut"></div>
 <div class="absolute top-4 right-4 bg-hijau-lumut text-white px-3 py-1 rounded-full text-sm font-bold">POPULER</div>
-<div class="text-6xl mb-4">🐐</div>
+<div class="mb-6 flex justify-center">
+  <img src="domba 26-30.PNG" alt="Domba" 
+       class="w-40 h-32 object-cover rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105">
+</div>
 <h4 class="text-2xl font-bold text-biru-dongker mb-4">Paket Sultan	</h4>
 <div class="text-4xl font-bold text-hijau-lumut mb-2">Rp. 4.200.000	</div>
-<p class="text-gray-600 mb-6">40-45 Kg</p>
+<p class="text-gray-600 mb-6">36-40 Kg</p>
 <ul class="text-left space-y-2 mb-8">
 <li class="flex items-center"><span class="text-hijau-lumut mr-2">✓</span> Hewan diawasi dokter	</li>
 <li class="flex items-center"><span class="text-hijau-lumut mr-2">✓</span> Sertifikat Qurban	</li>
@@ -290,10 +310,81 @@ Pilih paket yang sesuai dengan kemampuan Anda. Semua paket akan disalurkan kepad
 
 </div>
 
+<!-- Paket Jumbo -->
+<div class="card-hover bg-white border-2 border-gray-200 rounded-2xl p-8 text-center relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-biru-dongker to-hijau-lumut"></div>
+<div class="mb-6 flex justify-center">
+  <img src="domba5.PNG" alt="Domba" 
+       class="w-40 h-32 object-cover rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105">
+</div>
+<h4 class="text-2xl font-bold text-biru-dongker mb-4">Paket Jumbo	</h4>
+<div class="text-4xl font-bold text-hijau-lumut mb-2">Rp. 4.700.000	</div>
+<p class="text-gray-600 mb-6">41-45 Kg</p>
+<ul class="text-left space-y-2 mb-8">
+<li class="flex items-center"><span class="text-hijau-lumut mr-2">✓</span> Hewan diawasi dokter	</li>
+<li class="flex items-center"><span class="text-hijau-lumut mr-2">✓</span> Sertifikat Qurban	</li>
+<li class="flex items-center"><span class="text-hijau-lumut mr-2">✓</span> Pemotongan Sesuai Syariat	</li>
+<li class="flex items-center"><span class="text-hijau-lumut mr-2">✓</span> Garansi hewan mati 100%	</li>
+</ul>
+<a href="https://forms.gle/C4jtKENEh3EciQP26" 
+   class="w-full block text-center bg-hijau-lumut hover:bg-hijau-lumut-light text-white py-3 rounded-full font-bold transition-all duration-300 transform hover:scale-105">
+  Pilih Paket Ini
+</a>
+
+</div>
+<!-- Paket Titan -->
+<div class="card-hover bg-white border-2 border-gray-200 rounded-2xl p-8 text-center relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-biru-dongker to-hijau-lumut"></div>
+<div class="mb-6 flex justify-center">
+  <img src="dombaa1.jpeg" alt="Domba" 
+       class="w-40 h-32 object-cover rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105">
+</div>
+<h4 class="text-2xl font-bold text-biru-dongker mb-4">Paket Titan	</h4>
+<div class="text-4xl font-bold text-hijau-lumut mb-2">Rp. 5.200.000	</div>
+<p class="text-gray-600 mb-6">46-50 Kg</p>
+<ul class="text-left space-y-2 mb-8">
+<li class="flex items-center"><span class="text-hijau-lumut mr-2">✓</span> Hewan diawasi dokter	</li>
+<li class="flex items-center"><span class="text-hijau-lumut mr-2">✓</span> Sertifikat Qurban	</li>
+<li class="flex items-center"><span class="text-hijau-lumut mr-2">✓</span> Pemotongan Sesuai Syariat	</li>
+<li class="flex items-center"><span class="text-hijau-lumut mr-2">✓</span> Garansi hewan mati 100%	</li>
+</ul>
+<a href="https://forms.gle/C4jtKENEh3EciQP26" 
+   class="w-full block text-center bg-hijau-lumut hover:bg-hijau-lumut-light text-white py-3 rounded-full font-bold transition-all duration-300 transform hover:scale-105">
+  Pilih Paket Ini
+</a>
+
+</div>
+<!-- Paket Legend -->
+<div class="card-hover bg-white border-2 border-gray-200 rounded-2xl p-8 text-center relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-biru-dongker to-hijau-lumut"></div>
+<div class="mb-6 flex justify-center">
+  <img src="domba 41-45.PNG" alt="Domba" 
+       class="w-40 h-32 object-cover rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105">
+</div>
+<h4 class="text-2xl font-bold text-biru-dongker mb-4">Paket Legend	</h4>
+<div class="text-4xl font-bold text-hijau-lumut mb-2">Rp. 5.700.000	</div>
+<p class="text-gray-600 mb-6">51-55 Kg</p>
+<ul class="text-left space-y-2 mb-8">
+<li class="flex items-center"><span class="text-hijau-lumut mr-2">✓</span> Hewan diawasi dokter	</li>
+<li class="flex items-center"><span class="text-hijau-lumut mr-2">✓</span> Sertifikat Qurban	</li>
+<li class="flex items-center"><span class="text-hijau-lumut mr-2">✓</span> Pemotongan Sesuai Syariat	</li>
+<li class="flex items-center"><span class="text-hijau-lumut mr-2">✓</span> Garansi hewan mati 100%	</li>
+</ul>
+<a href="https://forms.gle/C4jtKENEh3EciQP26" 
+   class="w-full block text-center bg-hijau-lumut hover:bg-hijau-lumut-light text-white py-3 rounded-full font-bold transition-all duration-300 transform hover:scale-105">
+  Pilih Paket Ini
+</a>
+
+</div>
+
+
 <!-- Paket Patungan Sapi	 -->
 <div class="card-hover bg-white border-2 border-gray-200 rounded-2xl p-8 text-center relative overflow-hidden">
 <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-biru-dongker to-hijau-lumut"></div>
-<div class="text-6xl mb-4">🐮</div>
+<div class="mb-6 flex justify-center">
+  <img src="sapi4.jpg " alt="Domba" 
+       class="w-40 h-32 object-cover rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105">
+</div>
 <h4 class="text-2xl font-bold text-biru-dongker mb-4">Paket Patungan Sapi	</h4>
 <div class="text-4xl font-bold text-hijau-lumut mb-2">Rp. 2.714.286</div>
 <p class="text-gray-600 mb-6">180-199 Kg</p>
@@ -316,7 +407,10 @@ Pilih paket yang sesuai dengan kemampuan Anda. Semua paket akan disalurkan kepad
 <!-- Paket Sapi Grade C	 -->
 <div class="card-hover bg-white border-2 border-gray-200 rounded-2xl p-8 text-center relative overflow-hidden">
 <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-hijau-lumut to-hijau-lumut-light"></div>
-<div class="text-6xl mb-4">🐄</div>
+<div class="mb-6 flex justify-center">
+  <img src="sapi3.jpg" alt="Domba" 
+       class="w-40 h-32 object-cover rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105">
+</div>
 <h4 class="text-2xl font-bold text-biru-dongker mb-4">Paket Sapi Grade C	</h4>
 <div class="text-4xl font-bold text-hijau-lumut mb-2">Rp. 19.000.000	</div>
 <p class="text-gray-600 mb-6">200-230 Kg</p>
@@ -337,7 +431,10 @@ Pilih paket yang sesuai dengan kemampuan Anda. Semua paket akan disalurkan kepad
 <div class="card-hover bg-white border-2 border-hijau-lumut rounded-2xl p-8 text-center relative overflow-hidden">
 <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-biru-dongker to-hijau-lumut"></div>
 <div class="absolute top-4 right-4 bg-hijau-lumut text-white px-3 py-1 rounded-full text-sm font-bold">POPULER</div>
-<div class="text-6xl mb-4">🐄</div>
+<div class="mb-6 flex justify-center">
+  <img src="sapi2.jpg" alt="Domba" 
+       class="w-40 h-32 object-cover rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105">
+</div>
 <h4 class="text-2xl font-bold text-biru-dongker mb-4">Paket Sapi Grade B	</h4>
 <div class="text-4xl font-bold text-hijau-lumut mb-2">Rp. 22.800.000	</div>
 <p class="text-gray-600 mb-6">240-260 Kg</p>
@@ -357,7 +454,10 @@ Pilih paket yang sesuai dengan kemampuan Anda. Semua paket akan disalurkan kepad
 <!-- Paket Sapi Grade A	 -->
 <div class="card-hover bg-white border-2 border-gray-200 rounded-2xl p-8 text-center relative overflow-hidden">
 <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-biru-dongker to-hijau-lumut"></div>
-<div class="text-6xl mb-4">🐮</div>
+<div class="mb-6 flex justify-center">
+  <img src="sapi1.jpg" alt="Domba" 
+       class="w-40 h-32 object-cover rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105">
+</div>
 <h4 class="text-2xl font-bold text-biru-dongker mb-4">Paket Sapi Grade A	</h4>
 <div class="text-4xl font-bold text-hijau-lumut mb-2">Rp. 25.650.000	</div>
 <p class="text-gray-600 mb-6">270-300 Kg</p>
@@ -373,13 +473,15 @@ Pilih paket yang sesuai dengan kemampuan Anda. Semua paket akan disalurkan kepad
 </a>
 
 </div>
+
 </div>
+
 
 <!-- CTA Besar -->
 <div class="text-center mt-16">
 <div class="bg-gradient-to-r from-biru-dongker to-hijau-lumut p-8 rounded-2xl text-white max-w-4xl mx-auto">
 <h4 class="text-3xl font-bold mb-4">🎯 Jangan Lewatkan Kesempatan Emas Ini!</h4>
-<p class="text-xl mb-6">Selalu menjadi smart buyer pastikan hanya melakukan transaksi melalui Rek BSI An Yys. Akselerasi Kompetensi Anak No. 7184545459 (hati-hati atas segala tindak penipuan)</p>
+<p class="text-xl mb-6">Karena maraknya penipuan, maka pastikan hanya melakukan transaksi melalui Bank BSI, No Rek 7184545459 An.Yys Akselerasi Kompetensi Anak</p>
 <a href="https://forms.gle/C4jtKENEh3EciQP26" 
    class="inline-flex items-center justify-center px-6 py-3 bg-white text-blue-800 font-bold rounded-full shadow-md hover:bg-gray-100 transition">
   🚀 Daftar Sekarang & Dapatkan Bonus!
@@ -509,10 +611,10 @@ Khusus Paket Kambing Super, Premium, Sultan ongkir senilai Rp. 100.000 Jabodetab
         <div class="swiper-slide"><img src="9.jpg" alt="Gambar 2"></div>
         <div class="swiper-slide"><img src="21.jpg" alt="Gambar 3"></div>
         <div class="swiper-slide"><img src="22.jpg" alt="Gambar 4"></div>
-        <div class="swiper-slide"><img src="23.jpg" alt="Gambar 5"></div>
-        <div class="swiper-slide"><img src="24.jpg" alt="Gambar 6"></div>
-        <div class="swiper-slide"><img src="25.jpg" alt="Gambar 6"></div>
-        <div class="swiper-slide"><img src="26.jpg" alt="Gambar 6"></div>
+        <div class="swiper-slide"><img src="23 (1).jpg" alt="Gambar 5"></div>
+        <div class="swiper-slide"><img src="24 (1).jpg" alt="Gambar 6"></div>
+        <div class="swiper-slide"><img src="25 (1).jpg" alt="Gambar 6"></div>
+        <div class="swiper-slide"><img src="26 (1).jpg" alt="Gambar 6"></div>
         <div class="swiper-slide"><img src="27.jpg" alt="Gambar 6"></div>
         <div class="swiper-slide"><img src="28.jpg" alt="Gambar 6"></div>
         <div class="swiper-slide"><img src="29.jpg" alt="Gambar 6"></div>
@@ -592,6 +694,146 @@ var swiper = new Swiper(".mySwiper", {
     </div>
   </div>
 </section>
+<!-- Team Section -->
+<section id="team">
+  <div class="team-container">
+    <h3 class="team-title">Tim Kami</h3>
+    <div class="team-grid">
+
+      <!-- Anggota Tim 1 -->
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="25.jpg" alt="Foto">
+        </div>
+        <h4>Penanggung Jawab</h4>
+        <p class="name">Rahmat Rizky</p>
+      </div>
+
+      <!-- Anggota Tim 2 -->
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="26.jpg" alt="Foto">
+        </div>
+        <h4>Pengawas</h4>
+        <p class="name">Yudha Adyaksa</p>
+      </div>
+
+      <!-- Anggota Tim 3 -->
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="23.jpg" alt="Foto">
+        </div>
+        <h4> Ketua Pelaksana</h4>
+        <p class="name">Yolanda Febiola</p>
+      </div>
+
+      <!-- Anggota Tim 4 -->
+<div class="team-card">
+  <div class="team-photo">
+    <img src="24.jpg" alt="Foto">
+  </div>
+  <h4>PIC Distribusi</h4>
+  <p class="name">Alita Puteri Octavia</p>
+</div>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- CSS -->
+<style>
+/* Container */
+#team {
+  background: #f8fafc;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.team-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Title */
+.team-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1a365d;
+  margin-bottom: 40px;
+}
+
+/* Grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+/* Card */
+.team-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* Photo */
+.team-photo {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #1a365d;
+}
+.team-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Text */
+.team-card h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #1a365d;
+  margin-bottom: 6px;
+}
+.team-card .name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+}
+.team-card .desc {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 14px;
+}
+
+/* Button */
+.btn-team {
+  display: inline-block;
+  background: #1a365d;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.btn-team:hover {
+  background: #0f2351;
+}
+</style>
 <h3 class="text-4xl font-bold text-biru-dongker mb-4 text-center">Hubungi Kami</h3>
 <p class="text-xl text-gray-600 mb-12 text-center">
   Tim kami siap membantu Anda dalam program tabungan qurban
@@ -601,7 +843,7 @@ var swiper = new Swiper(".mySwiper", {
   <div class="bg-gradient-to-br from-blue-50 to-green-50 p-6 rounded-xl flex flex-col items-center text-center">
     <div class="text-3xl mb-4">📱</div>
     <h4 class="font-bold text-biru-dongker mb-2">WhatsApp</h4>
-    <p class="text-gray-600">+62 877-1477-7039</p>
+    <p class="text-gray-600">+62 857-1122-3367</p>
   </div>
   <div class="bg-gradient-to-br from-blue-50 to-green-50 p-6 rounded-xl flex flex-col items-center text-center">
     <div class="text-3xl mb-4">📧</div>
@@ -759,7 +1001,65 @@ target.scrollIntoView({ behavior: 'smooth' });
 });
 });
 </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96e5e76b566f9a70',t:'MTc1NTA2MzkwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96e5e76b566f9a70',t:'MTc1NTA2MzkwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+<!-- Container Notifikasi -->
+<div id="notif-container" class="fixed top-5 right-5 space-y-3 z-50"></div>
+
+<script>
+  // Data notifikasi (bisa ditambah sesuai kebutuhan)
+  const notifList = [
+    "Budi menabung Rp30.000",
+    "Aisyah menabung Rp50.000",
+    "Fajar baru mendaftar Tabungan Qurban",
+    "Dewi menabung Rp40.000",
+    "Fahri baru bergabung sebagai peserta",
+    "Siti menabung Rp35.000"
+  ];
+
+  function showNotif(message) {
+    // Buat elemen notifikasi
+    const notif = document.createElement("div");
+    notif.className =
+      "bg-white border border-gray-200 rounded-lg shadow-lg px-4 py-3 text-sm text-gray-700 animate-slide-left flex items-center";
+    notif.innerHTML = `
+      <span class="mr-2">🐐</span> ${message}
+    `;
+
+    // Tambahin ke container
+    document.getElementById("notif-container").appendChild(notif);
+
+    // Hapus otomatis setelah 6 detik
+    setTimeout(() => {
+      notif.classList.add("opacity-0", "translate-x-5", "transition-all", "duration-500");
+      setTimeout(() => notif.remove(), 500);
+    }, 6000);
+  }
+
+  // Muncul notifikasi setiap 20 detik
+  setInterval(() => {
+    const randomMessage = notifList[Math.floor(Math.random() * notifList.length)];
+    showNotif(randomMessage);
+  }, 20000);
+
+  // Muncul 1x saat load halaman
+  window.onload = function () {
+    const randomMessage = notifList[Math.floor(Math.random() * notifList.length)];
+    showNotif(randomMessage);
+  };
+</script>
+
+<!-- Animasi -->
+<style>
+  @keyframes slide-left {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  .animate-slide-left {
+    animation: slide-left 0.5s ease-out;
+  }
+</style>
+
+</body>
 </html>
 
 <script>

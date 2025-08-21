@@ -258,6 +258,7 @@ transform: scale(1.02);
 <a href="#donate" class="nav-link text-white hover:text-gold px-3 py-2 text-sm font-medium transition-colors">Donasi</a>
 <a href="#articles" class="nav-link text-white hover:text-gold px-3 py-2 text-sm font-medium transition-colors">Tabungan Qurban</a>
 <a href="#documentation" class="nav-link text-white hover:text-gold px-3 py-2 text-sm font-medium transition-colors">Dokumentasi</a>
+<a href="https://medium.com/@akselkanindonesia" class="nav-link text-white hover:text-gold px-3 py-2 text-sm font-medium transition-colors">Artikel</a>
 <a href="#contact" class="nav-link text-white hover:text-gold px-3 py-2 text-sm font-medium transition-colors">Kontak</a>
 </div>
 </div>
@@ -546,7 +547,7 @@ Berbagai program inovatif untuk mengakselerasi kompetensi anak bangsa
 <div class="text-center">
 <h3 class="text-xl font-bold text-navy-dark mb-3" >Berantas Kemiskinan Ekstream</h3>
 <p class="text-gray-600 mb-4" >Kami hadir dengan solusi nyata: pelatihan keterampilan, pendampingan UMKM, dan akses pendidikan-kesehatan untuk mengentaskan kemiskinan ekstrem secara berkelanjutan. Melalui pendekatan holistik, kami memberdayakan masyarakat menuju kemandirian ekonomi.</p>
-<span class="text-gold font-semibold text-sm">Selengkapnya</span>
+<span class="text-gold font-semibold text-sm"><a href="ukmikm.my.id">Selengkapnya</a></span>
 </div>
 </div>
 
@@ -555,8 +556,8 @@ Berbagai program inovatif untuk mengakselerasi kompetensi anak bangsa
 
 <div class="text-center mt-12">
 <p class="text-gray-600 mb-6">Kami juga siap menerima kerjasama dalam program CSR perusahaan Anda</p>
-<button onclick="scrollToSection('contact')" class="gradient-gold text-navy-dark px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all">
-<i class="fas fa-handshake mr-2"></i>Kerjasama CSR
+<button class="gradient-gold text-navy-dark px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all">
+<i class="fas fa-handshake mr-2"></i><a href="http://wa.me/6287714777039">Kerjasama CSR</a>
 </button>
 </div>
 </div>
@@ -727,7 +728,7 @@ Bareng-bareng kita wujudkan #QurbanUntukPemberdayaan 🌾
 
 <div class="text-center mt-12">
 <button class="gradient-gold text-navy-dark px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all">
-<i class="fas fa-newspaper mr-2"></i>Tabung Sekarang
+<i class="fas fa-newspaper mr-2"></i><a href="tabungqurban.my.id">Tabung Sekarang</a>
 </button>
 </div>
 </div>
@@ -873,20 +874,23 @@ Mari bergabung dengan kami dalam misi mulia mengakselerasi kompetensi anak bangs
 <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
 <h3 class="text-2xl font-bold text-white mb-6">Ikuti Kami</h3>
 <div class="flex space-x-4">
-<a href="#" class="w-12 h-12 bg-gold rounded-lg flex items-center justify-center hover:bg-gold-dark transition-colors">
-<i class="fab fa-facebook text-navy-dark text-xl"></i>
-</a>
-<a href="#" class="w-12 h-12 bg-gold rounded-lg flex items-center justify-center hover:bg-gold-dark transition-colors">
-<i class="fab fa-instagram text-navy-dark text-xl"></i>
-</a>
-
-<a href="#" class="w-12 h-12 bg-gold rounded-lg flex items-center justify-center hover:bg-gold-dark transition-colors">
-<i class="fab fa-linkedin text-navy-dark text-xl"></i>
-</a>
-<a href="#" class="w-12 h-12 bg-gold rounded-lg flex items-center justify-center hover:bg-gold-dark transition-colors">
-<i class="fab fa-youtube text-navy-dark text-xl"></i>
-</a>
+  <a href="#" class="w-12 h-12 bg-gold rounded-lg flex items-center justify-center hover:bg-gold-dark transition-colors">
+    <i class="fab fa-facebook text-navy-dark text-xl"></i>
+  </a>
+  <a href="#" class="w-12 h-12 bg-gold rounded-lg flex items-center justify-center hover:bg-gold-dark transition-colors">
+    <i class="fab fa-instagram text-navy-dark text-xl"></i>
+  </a>
+  <a href="#" class="w-12 h-12 bg-gold rounded-lg flex items-center justify-center hover:bg-gold-dark transition-colors">
+    <i class="fab fa-linkedin text-navy-dark text-xl"></i>
+  </a>
+  <a href="#" class="w-12 h-12 bg-gold rounded-lg flex items-center justify-center hover:bg-gold-dark transition-colors">
+    <i class="fab fa-youtube text-navy-dark text-xl"></i>
+  </a>
+  <a href="#" class="w-12 h-12 bg-gold rounded-lg flex items-center justify-center hover:bg-gold-dark transition-colors">
+    <i class="fab fa-tiktok text-navy-dark text-xl"></i>
+  </a>
 </div>
+
 <p class="text-gray-300 mt-4">#AkselkanIndonesia</p>
 </div>
 </div>
@@ -1024,10 +1028,10 @@ alert(`Terimakasih sudah berkenan Silahkan Scan Qris sesuai dengan paket donasi 
 
 function donateCustom() {
 const amount = document.getElementById('customAmount').value;
-if (amount && amount >= 10000) {
+if (amount && amount >= 2000) {
 donate(parseInt(amount));
 } else {
-alert('Minimal donasi adalah Rp 10.000');
+alert('Minimal donasi adalah Rp 2.000');
 }
 }
 
