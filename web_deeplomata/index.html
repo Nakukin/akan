@@ -91,6 +91,7 @@ opacity: 1;
 transform: translateY(0);
 }
 }
+
 </style>
 </head>
 <body class="bg-black font-modern">
@@ -354,7 +355,7 @@ Mengadvokasi isu-isu kemanusiaan global dan membangun konsensus internasional un
 </div>
 </section>
 
-<!-- Galeri SVG Jalan Terus ke Kanan -->
+<!-- Galeri Infinite Modern -->
 <section class="py-16 diplomatic-gradient elegant-pattern overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -365,15 +366,51 @@ Mengadvokasi isu-isu kemanusiaan global dan membangun konsensus internasional un
       <p class="text-yellow-200 mt-2">Cuplikan momen dan aktivitas diplomatik</p>
     </div>
 
-    <!-- Wrapper untuk animasi -->
-    <div class="flex space-x-6 animate-slide-right">
-      <img src="deeplomata/file (1).svg" alt="Kegiatan diplomatik 1" class="w-60 h-40 md:h-48 object-cover rounded-2xl shadow-2xl">
-      <img src="deeplomata/file (2).svg" alt="Kegiatan diplomatik 2" class="w-60 h-40 md:h-48 object-cover rounded-2xl shadow-2xl">
-      <img src="deeplomata/file (3).svg" alt="Kegiatan diplomatik 3" class="w-60 h-40 md:h-48 object-cover rounded-2xl shadow-2xl">
-      <img src="deeplomata/file.svg" alt="Kegiatan diplomatik 4" class="w-60 h-40 md:h-48 object-cover rounded-2xl shadow-2xl">
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="4.jpg" class="w-full h-60 md:h-72 object-cover rounded-2xl shadow-2xl">
+        </div>
+        <div class="swiper-slide">
+          <img src="5.jpg" class="w-full h-60 md:h-72 object-cover rounded-2xl shadow-2xl">
+        </div>
+        <div class="swiper-slide">
+          <img src="6.jpg" class="w-full h-60 md:h-72 object-cover rounded-2xl shadow-2xl">
+        </div>
+        <div class="swiper-slide">
+          <img src="7.jpg" class="w-full h-60 md:h-72 object-cover rounded-2xl shadow-2xl">
+        </div>
+      </div>
     </div>
+
   </div>
 </section>
+
+<!-- SwiperJS CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 3,          // tampil 3 gambar sekaligus
+  spaceBetween: 20,          // jarak antar gambar
+  loop: true,                // looping infinite
+  autoplay: {
+    delay: 0,                // tanpa delay
+    disableOnInteraction: false,
+  },
+  speed: 5000,               // makin kecil makin cepat (ms)
+  allowTouchMove: true,      // bisa geser manual
+  grabCursor: true,          // kursor jadi "grab" modern
+  breakpoints: {
+    0: { slidesPerView: 1 },   // HP
+    640: { slidesPerView: 2 }, // Tablet
+    1024: { slidesPerView: 3 } // Laptop
+  }
+});
+</script>
+
 
 <!-- CSS Animasi Jalan ke Kanan -->
 <style>
